@@ -8,7 +8,8 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "android-build": "npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android-custom/app/src/main/assets/index.android.bundle --assets-dest android-custom/app/src/main/res/"
+    "android-build": "npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android-custom/app/src/main/assets/index.android.bundle --assets-dest android-custom/app/src/main/res/",
+    "ios-build": "npx react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios-custom/main.jsbundle --assets-dest ios"
   },
   "dependencies": {
     "react": "16.11.0",
