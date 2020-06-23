@@ -19,8 +19,8 @@ class ViewController: UIViewController {
     
     @IBAction func buttonNextPage(_ sender: Any) {
         NSLog("Hello")
-//        let providerSettings = RCTBundleURLProvider.sharedSettings() // release
-//        guard let jsCodeLocation = providerSettings?.jsBundleURL(forBundleRoot: "main.jsbundle", fallbackResource: nil) else { return } // release
+        let providerSettings = RCTBundleURLProvider.sharedSettings() // release
+//        let jsCodeLocation = providerSettings?.jsBundleURL(forBundleRoot: "main.jsbundle", fallbackResource: nil) // release
         guard let jsCodeLocation = URL(string: "http://localhost:8081/index.bundle?platform=ios") else { return  } // debug
         let mockData:NSDictionary = ["scores":
             [
@@ -38,6 +38,7 @@ class ViewController: UIViewController {
         let vc = UIViewController()
         vc.view = rootView
         self.present(vc, animated: true, completion: nil)
+        print(providerSettings)
     }
 }
 

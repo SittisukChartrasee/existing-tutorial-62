@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A1F41F0248165440010C60C /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 4A1F41EF248165440010C60C /* main.jsbundle */; };
+		4A1F41F324816A8B0010C60C /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 4A1F41F224816A8B0010C60C /* assets */; };
 		4A66540A2480E36B00B050A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6654092480E36B00B050A1 /* AppDelegate.swift */; };
 		4A66540C2480E36B00B050A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A66540B2480E36B00B050A1 /* SceneDelegate.swift */; };
 		4A66540E2480E36B00B050A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A66540D2480E36B00B050A1 /* ViewController.swift */; };
@@ -36,7 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4A2334FC2480EA2700D9D01C /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.jsbundle; path = ../main.jsbundle; sourceTree = "<group>"; };
+		4A1F41EF248165440010C60C /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = SOURCE_ROOT; };
+		4A1F41F224816A8B0010C60C /* assets */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = assets; path = Resource/assets; sourceTree = SOURCE_ROOT; };
 		4A6654062480E36B00B050A1 /* ios-custom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-custom.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A6654092480E36B00B050A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A66540B2480E36B00B050A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,9 +85,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A1F41F124816A510010C60C /* Resourse */ = {
+			isa = PBXGroup;
+			children = (
+				4A1F41F224816A8B0010C60C /* assets */,
+			);
+			path = Resourse;
+			sourceTree = "<group>";
+		};
 		4A6653FD2480E36B00B050A1 = {
 			isa = PBXGroup;
 			children = (
+				4A1F41F124816A510010C60C /* Resourse */,
 				4A6654082480E36B00B050A1 /* ios-custom */,
 				4A66541F2480E36F00B050A1 /* ios-customTests */,
 				4A66542A2480E36F00B050A1 /* ios-customUITests */,
@@ -107,7 +119,7 @@
 		4A6654082480E36B00B050A1 /* ios-custom */ = {
 			isa = PBXGroup;
 			children = (
-				4A2334FC2480EA2700D9D01C /* main.jsbundle */,
+				4A1F41EF248165440010C60C /* main.jsbundle */,
 				4A6654092480E36B00B050A1 /* AppDelegate.swift */,
 				4A66540B2480E36B00B050A1 /* SceneDelegate.swift */,
 				4A66540D2480E36B00B050A1 /* ViewController.swift */,
@@ -166,6 +178,7 @@
 				4A6654032480E36B00B050A1 /* Frameworks */,
 				4A6654042480E36B00B050A1 /* Resources */,
 				77E8DE2340E5EE75084679FD /* [CP] Embed Pods Frameworks */,
+				4A1F41F424816C880010C60C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -260,9 +273,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A1F41F324816A8B0010C60C /* assets in Resources */,
 				4A6654162480E36F00B050A1 /* LaunchScreen.storyboard in Resources */,
 				4A6654132480E36F00B050A1 /* Assets.xcassets in Resources */,
 				4A6654112480E36B00B050A1 /* Main.storyboard in Resources */,
+				4A1F41F0248165440010C60C /* main.jsbundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +298,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4A1F41F424816C880010C60C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\nif nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\nif ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\necho \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\nexit 2\nfi\nelse\nopen \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\nfi\nfi\n";
+		};
 		77E8DE2340E5EE75084679FD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
