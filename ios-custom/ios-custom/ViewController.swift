@@ -19,9 +19,8 @@ class ViewController: UIViewController {
     
     @IBAction func buttonNextPage(_ sender: Any) {
         NSLog("Hello")
-        let providerSettings = RCTBundleURLProvider.sharedSettings() // release
-//        let jsCodeLocation = providerSettings?.jsBundleURL(forBundleRoot: "main.jsbundle", fallbackResource: nil) // release
-        guard let jsCodeLocation = URL(string: "http://localhost:8081/index.bundle?platform=ios") else { return  } // debug
+        let jsCodeLocation = RCTBundleURLProvider.sharedSettings()?.jsBundleURL(forBundleRoot: "main.jsbundle", fallbackResource: nil) // release
+//        guard let jsCodeLocation = URL(string: "http://localhost:8081/index.bundle?platform=ios") else { return  } // debug
         let mockData:NSDictionary = ["scores":
             [
                 ["name":"Alex", "value":"42"],
@@ -30,7 +29,7 @@ class ViewController: UIViewController {
         ]
 
         let rootView = RCTRootView(
-            bundleURL: jsCodeLocation,
+            bundleURL: jsCodeLocation!,
             moduleName: "kaPVDMobile",
             initialProperties: mockData as [NSObject : AnyObject],
             launchOptions: nil
@@ -38,7 +37,6 @@ class ViewController: UIViewController {
         let vc = UIViewController()
         vc.view = rootView
         self.present(vc, animated: true, completion: nil)
-        print(providerSettings)
     }
 }
 
