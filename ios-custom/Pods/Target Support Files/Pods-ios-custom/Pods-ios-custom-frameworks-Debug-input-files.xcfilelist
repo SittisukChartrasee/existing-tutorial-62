@@ -3,6 +3,10 @@ ${BUILT_PRODUCTS_DIR}/DoubleConversion/DoubleConversion.framework
 ${BUILT_PRODUCTS_DIR}/FBReactNativeSpec/FBReactNativeSpec.framework
 ${BUILT_PRODUCTS_DIR}/Folly/folly.framework
 ${BUILT_PRODUCTS_DIR}/RCTTypeSafety/RCTTypeSafety.framework
+${BUILT_PRODUCTS_DIR}/RNCMaskedView/RNCMaskedView.framework
+${BUILT_PRODUCTS_DIR}/RNGestureHandler/RNGestureHandler.framework
+${BUILT_PRODUCTS_DIR}/RNReanimated/RNReanimated.framework
+${BUILT_PRODUCTS_DIR}/RNScreens/RNScreens.framework
 ${BUILT_PRODUCTS_DIR}/React-Core/React.framework
 ${BUILT_PRODUCTS_DIR}/React-CoreModules/CoreModules.framework
 ${BUILT_PRODUCTS_DIR}/React-RCTAnimation/RCTAnimation.framework
@@ -20,3 +24,4 @@ ${BUILT_PRODUCTS_DIR}/React-jsinspector/jsinspector.framework
 ${BUILT_PRODUCTS_DIR}/ReactCommon/ReactCommon.framework
 ${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework
 ${BUILT_PRODUCTS_DIR}/glog/glog.framework
+${BUILT_PRODUCTS_DIR}/react-native-safe-area-context/react_native_safe_area_context.framework

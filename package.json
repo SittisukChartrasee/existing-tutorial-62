@@ -12,8 +12,18 @@
     "ios-build": "npx react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios-custom/main.jsbundle --assets-dest ios"
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^5.6.1",
+    "@react-navigation/drawer": "^5.8.2",
+    "@react-navigation/native": "^5.5.1",
+    "@react-navigation/stack": "^5.5.1",
     "react": "16.11.0",
-    "react-native": "0.62.2"
+    "react-native": "0.62.2",
+    "react-navigation": "^4.3.9",
+    "react-native-reanimated": "^1.9.0",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-screens": "^2.8.0",
+    "react-native-safe-area-context": "^3.0.3",
+    "@react-native-community/masked-view": "^0.1.10"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",

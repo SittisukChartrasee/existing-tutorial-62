@@ -201,6 +201,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FBReactNativeSpec/FBReactNativeSpec.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Folly/folly.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RCTTypeSafety/RCTTypeSafety.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RNCMaskedView/RNCMaskedView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RNGestureHandler/RNGestureHandler.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RNReanimated/RNReanimated.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RNScreens/RNScreens.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/React-Core/React.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/React-CoreModules/CoreModules.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/React-RCTAnimation/RCTAnimation.framework"
@@ -218,12 +222,17 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/ReactCommon/ReactCommon.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/glog/glog.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/react-native-safe-area-context/react_native_safe_area_context.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/DoubleConversion/DoubleConversion.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FBReactNativeSpec/FBReactNativeSpec.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Folly/folly.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RCTTypeSafety/RCTTypeSafety.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RNCMaskedView/RNCMaskedView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RNGestureHandler/RNGestureHandler.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RNReanimated/RNReanimated.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RNScreens/RNScreens.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/React-Core/React.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/React-CoreModules/CoreModules.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/React-RCTAnimation/RCTAnimation.framework"
@@ -241,6 +250,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/ReactCommon/ReactCommon.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/glog/glog.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/react-native-safe-area-context/react_native_safe_area_context.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
